@@ -1,0 +1,125 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.titulo {
+  background-color: v.$gris;
+  height: 10rem;
+  h1 {
+    padding-top: 2rem;
+    color: v.$amarillo;
+    text-align: center;
+    font-size: 6rem;
+  }
+}
+.proyectos {
+  background-color: v.$gris;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  height: auto;
+  display: inline-block;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  border-bottom: solid 3px v.$negro1;
+  .proyecto {
+    width: 50%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 5rem;
+    border-bottom: 1px solid v.$negro;
+    padding-bottom: 4rem;
+    &:last-of-type {
+      border: none;
+    }
+
+    ul {
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        margin: auto;
+        list-style: none;
+        height: 15%;
+        width: 15%;
+      }
+    }
+
+    h3 {
+      color: v.$blanco;
+      font-size: 3rem;
+      text-align: center;
+    }
+
+    .imagen {
+      height: 100%;
+      width: 100%;
+      margin: auto;
+      padding: auto;
+
+      img {
+        size: auto;
+        text-align: center;
+        transition: 0.3s;
+
+        &:hover {
+          transform: scale(120%);
+          transition: 0.3s;
+        }
+      }
+    }
+    p {
+      margin-top: 1rem;
+      color: v.$blanco;
+      font-size: 1.8rem;
+      font-family: v.$fuente_principal;
+      text-align: center;
+    }
+
+    .container {
+      background-color: v.$negro1;
+      width: 20rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin: auto;
+      padding: auto;
+      transition: 0.3s;
+      &:hover {
+        background-color: v.$negro;
+
+        cursor: pointer;
+        transform: scale(105%);
+        transition: 0.5s;
+        a {
+          color: v.$amarillo;
+        }
+      }
+      a {
+        color: v.$blanco;
+
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  @include m.tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .proyecto {
+      display: inline-block;
+      border-right: 1px solid v.$negro;
+      border-bottom: none;
+      padding: 0 5rem;
+      margin: auto;
+      &:last-of-type {
+        border: none;
+      }
+    }
+  }
+}

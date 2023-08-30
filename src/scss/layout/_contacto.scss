@@ -1,0 +1,40 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+div.contacto {
+  text-align: center; /* Centrar el texto y los elementos internos */
+  margin: 0 auto; /* Centrar el bloque en la página */
+  padding: 20px; /* Agregar espaciado interno al bloque */
+  color: v.$amarillo;
+
+  p {
+    font-size: bolder;
+    color: v.$amarillo;
+  }
+
+  ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente los elementos en la lista */
+
+    a {
+      display: inline-block;
+      margin: 0 30px; /* Agregar un espacio entre los enlaces */
+      transform: scale(300%);
+      transition: 0.3s;
+      color: v.$negro;
+
+      &:hover {
+        transform: scale(320%);
+        transition: 0.3s;
+        &.whatsapp {
+          color: #25d366;
+        }
+        &.gmail {
+          color: #549cf1;
+        }
+      }
+    }
+  }
+}

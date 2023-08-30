@@ -1,0 +1,56 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.presentacion {
+  height: 30rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  background-image: url(/img/pixels-neon.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  .nombre {
+    color: v.$blanco;
+    background-color: rgba(#211f1f, 0.8);
+    width: fit-content;
+    padding: 1rem 5rem;
+    border-radius: 0.7rem;
+    h2 {
+      margin-bottom: 0;
+      text-align: center;
+      color: v.$blanco;
+    }
+    p {
+      width: fit-content;
+      margin-top: 0;
+      color: v.$blanco;
+      text-align: center;
+      overflow: hidden;
+      border-right: 0.15em solid v.$amarillo; /* Cambia el color del cursor aquí */
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation: typing 2s steps(35, end), blink-caret 0.75s step-end infinite;
+    }
+    @keyframes typing {
+      from {
+        width: 0%;
+      }
+      to {
+        width: 65%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: v.$amarillo;
+      } /* Cambia el color del cursor aquí */
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.skills {
+  color: v.$blanco;
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    font-weight: bold;
+    padding: 2rem;
+
+    @include m.tablet {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    li {
+      .skill {
+        display: grid;
+        place-items: center;
+
+        .logo {
+          transform: scale(300%);
+          color: v.$negro;
+        }
+        p {
+          color: v.$blanco;
+        }
+      }
+    }
+  }
+}

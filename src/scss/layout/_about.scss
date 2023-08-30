@@ -1,0 +1,66 @@
+@use "../base/mixins" as m;
+@use "../base/variables" as v;
+
+.about {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background-color: v.$gris;
+  padding-bottom: 3rem;
+  border-bottom: solid 3px v.$negro1;
+
+  @include m.tablet {
+    p,
+    .logos {
+      width: 50rem;
+    }
+    display: flex;
+    .logos {
+      display: block;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  a {
+    font-size: 5rem;
+    font-weight: bold;
+    width: auto;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: v.$negro;
+    transition: 0.2s;
+    i {
+      padding-left: 1rem;
+    }
+    &:hover {
+      color: v.$amarillo;
+      transition: 0.2s;
+    }
+  }
+  .titulo {
+    padding-top: 2rem;
+    text-align: center;
+    color: v.$amarillo;
+  }
+  p {
+    color: v.$blanco;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+
+    .logo {
+      zoom: 300%;
+      color: v.$negro;
+    }
+  }
+}
